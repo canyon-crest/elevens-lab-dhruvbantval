@@ -19,7 +19,7 @@ public class Deck2 {
 	 * Cards are dealt from the top (highest index) down.
 	 * The next card to be dealt is at size - 1.
 	 */
-	private int size;
+	private int size=0;
 
 
 	/**
@@ -31,7 +31,13 @@ public class Deck2 {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck2(String[] ranks, String[] suits, int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		for(int i = 0; i<ranks.length; i++){
+			for(int j = 0; j<suits.length; j++){
+				Card2 card = new Card2(ranks[i], suits[j], values[i]); 
+				cards.add(card);
+				size++;
+			}
+		}
 	}
 
 
@@ -41,7 +47,7 @@ public class Deck2 {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return true;
+		return size == 0;
 	}
 
 	/**
@@ -50,7 +56,7 @@ public class Deck2 {
 	 */
 	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return -1;
+		return size;
 	}
 
 	/**
@@ -68,7 +74,10 @@ public class Deck2 {
 	 */
 	public Card2 deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return new Card2("","",-1);
+		Card2 card = cards.get(0);
+		cards.remove(0);
+		size--;
+		return card;
 	}
 
 	/**

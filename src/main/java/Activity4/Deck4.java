@@ -63,8 +63,12 @@ public class Deck4 {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-		this.size = 0; // remove me
+		for(int i = size-1; i>0; i--){
+			int r = (int) ( Math.random() * (i+1));
+			Card4 temp = cards.get(i);
+			cards.set(i,cards.get(r));
+			cards.set(r,temp);
+		}		
 	}
 
 	/**

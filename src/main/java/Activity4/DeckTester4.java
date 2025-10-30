@@ -52,6 +52,6 @@ public class DeckTester4 {
 		System.out.println();
 		System.out.println();
 
-		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+
 	}
 }

@@ -1,4 +1,5 @@
 package Activity3;
+import java.util.Arrays;
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -51,8 +52,24 @@ public class Shuffler3 {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-	}
+    int[] shuffled = new int[values.length];
+    int mid = (values.length + 1) / 2;
+    int k = 0;
+
+    for (int i = 0; i < mid; i++) {
+        shuffled[k] = values[i];
+        k += 2;
+    }
+    k = 1;
+    for (int i = mid; i < values.length; i++) {
+        shuffled[k] = values[i];
+        k += 2;
+    }
+
+    for (int i = 0; i < values.length; i++) {
+        values[i] = shuffled[i];
+    }
+}
 
 	/**
 	 * Apply an "efficient selection shuffle" to the argument.
@@ -66,6 +83,31 @@ public class Shuffler3 {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int[] shuffled = new int[values.length];
+		int num;
+		for(int i = 0; i<values.length; i++){
+			while(true){
+				num = (int)(Math.random() * values.length);
+				if(values[num] != -1){
+					break;
+				}
+			}
+			shuffled[i] = values[num];
+			values[num] = -1;
 	}
+		for (int i = 0; i < values.length; i++) {
+			values[i] = shuffled[i];
+		}
+	}
+
+	public static boolean arePermutations(int[] arr1, int[] arr2){
+		if(arr1.length!= arr2.length)
+			return false;
+		if(arr1.length == 0)
+			return true;
+		Arrays.sort(arr1);
+		Arrays.sort(arr2);
+		return arr1.equals(arr2);
+	}
+
 }

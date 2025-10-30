@@ -9,6 +9,13 @@ public class CardTester1 {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		Card1 card1 = new Card1("king", "diamond", 13);
+		Card1 card2 = new Card1("queen", "clover", 12);
+		Card1 card3 = new Card1("10", "hearts", 10);
+		System.out.println(card1.rank());
+		System.out.println(card2.getClass());
+		System.out.println(card3.pointValue());
+		System.out.println(card1.equals(card1));
+
 	}
 }
