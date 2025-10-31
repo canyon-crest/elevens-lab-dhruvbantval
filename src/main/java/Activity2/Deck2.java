@@ -31,6 +31,7 @@ public class Deck2 {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck2(String[] ranks, String[] suits, int[] values) {
+		cards = new ArrayList<>();
 		for(int i = 0; i<ranks.length; i++){
 			for(int j = 0; j<suits.length; j++){
 				Card2 card = new Card2(ranks[i], suits[j], values[i]); 
